@@ -1,5 +1,5 @@
 from turtle import Screen, Turtle
-
+from score_board import Score_board
 import paddel
 from paddel import Paddle
 from boll import Boll
@@ -27,6 +27,7 @@ screen.onkey(l_paddel.go_up, "w")
 screen.onkey(l_paddel.go_down, "s")
 
 boll = Boll()
+score_board = Score_board()
 
 #creating while loop to turn animation on
 game_is_on = True
@@ -47,10 +48,12 @@ while game_is_on:
     # Detect right paddel (paddel go from 340 to 360)
     if boll.xcor() > 380:
         boll.reset_position()
+        score_board.l_point()
 
     # Detect left paddel (paddel go from 340 to 360)
     if boll.xcor() < -380:
         boll.reset_position()
+        score_board.r_point()
 
 
 screen.exitonclick()
