@@ -33,7 +33,7 @@ score_board = Score_board()
 game_is_on = True
 while game_is_on:
     screen.update()
-    time.sleep(0.1)
+    time.sleep(boll.move_speed)
     boll.move()
 
     #Dectecting collition with wall
