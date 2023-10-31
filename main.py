@@ -1,4 +1,6 @@
 from turtle import Screen, Turtle
+
+import paddel
 from paddel import Paddle
 from boll import Boll
 import time
@@ -36,7 +38,11 @@ while game_is_on:
     #Dectecting collition with wall
 
     if boll.ycor() > 280 or boll.ycor() < -280:
-        boll.bounce()
+        boll.bounce_y()
+
+    #Detecting collition with boll
+    if boll.distance(r_paddel) < 50 and boll.xcor() > 320 or boll.distance(l_paddel) < 50 and boll.xcor() < -320 :
+         boll.bounce_x()
 
 
 
