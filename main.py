@@ -33,5 +33,11 @@ while game_is_on:
     time.sleep(0.1)
     boll.move()
 
+    #Dectecting collition with wall
+
+    if boll.ycor() > 280 or boll.ycor() < -280:
+        boll.bounce()
+
+
 
 screen.exitonclick()
