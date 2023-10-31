@@ -44,6 +44,13 @@ while game_is_on:
     if boll.distance(r_paddel) < 50 and boll.xcor() > 320 or boll.distance(l_paddel) < 50 and boll.xcor() < -320 :
          boll.bounce_x()
 
+    # Detect right paddel (paddel go from 340 to 360)
+    if boll.xcor() > 380:
+        boll.reset_position()
+
+    # Detect left paddel (paddel go from 340 to 360)
+    if boll.xcor() < -380:
+        boll.reset_position()
 
 
 screen.exitonclick()
